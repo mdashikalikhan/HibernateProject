@@ -5,6 +5,7 @@ import java.util.Date;
 import org.ashik.dto.Address;
 import org.ashik.dto.Customers;
 import org.ashik.dto.UserIncremental;
+import org.ashik.dto.UserMaster;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -25,14 +26,29 @@ public class HibernateTestAnother1 {
 		address.setState("CUSTOMER STATE");
 		address.setStreet("CUSTOMER STREET");
 		customers.setAddress(address);
+		customers.setDescription("ASHIK ALI");
+		
+		Address address1 = new Address();
+		address1.setCity("Master CITY");
+		address1.setState("Master STATE");
+		address1.setStreet("Master STREET");
+		address1.setPinCode("Master Pincode");
+		
+		UserMaster userMaster = new UserMaster();
+		userMaster.setName("Master User");
+		userMaster.getListOfAddressses().add(address);
+		userMaster.getListOfAddressses().add(address1);
 		
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		session.save(userIncremental);
 		session.save(customers);
+		session.save(userMaster);
 		session.getTransaction().commit();
 		session.close();
+		
+		System.out.println("Master/Detail Record: " + userMaster);
 		
 		userIncremental = null;
 		customers = null;
@@ -40,13 +56,15 @@ public class HibernateTestAnother1 {
 		session = sessionFactory.openSession();
 		session.beginTransaction();
 		try{
-			customers = session.get(Customers.class, 29);
+			customers = session.get(Customers.class, 4);
+			System.out.println(customers);
+			customers = session.get(Customers.class, 6);
 			System.out.println(customers);
 		}catch(Exception e) {
 			
 		}
 		try {			
-			userIncremental = session.get(UserIncremental.class, 5);
+			userIncremental = session.get(UserIncremental.class, 1);
 			/*System.out.println("User Id: " + userIncremental.getId());
 			System.out.println("User Name: " + userIncremental.getName());*/
 			System.out.println(userIncremental);

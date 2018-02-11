@@ -39,7 +39,8 @@
 		<mapping class="org.ashik.dto.UserDeatils"/>
 		<mapping class="org.ashik.dto.UserInfo"/>
 		<mapping class="org.ashik.dto.UserIncremental"/>
-		<mapping class="org.ashik.dto.Customers"/>        
+		<mapping class="org.ashik.dto.Customers"/>
+		<mapping class="org.ashik.dto.UserMaster"/>        
         <!-- <mapping resource="org/hibernate/tutorial/hbm/Event.hbm.xml"/> -->
 
     </session-factory>

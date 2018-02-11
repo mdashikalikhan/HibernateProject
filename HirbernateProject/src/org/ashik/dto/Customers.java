@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -37,6 +38,10 @@ public class Customers {
 	@Column(name="CUSTOMER_DOB")
 	@Temporal(TemporalType.DATE)
 	private Date dateOfBirth;
+	@Column(name="CUSTOMER_SECRET")
+	private String secretText;
+	@Lob
+	private String description;
 	public int getId() {
 		return id;
 	}
@@ -73,10 +78,27 @@ public class Customers {
 	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
+	
+	public String getSecretText() {
+		return secretText;
+	}
+	public void setSecretText(String secretText) {
+		this.secretText = secretText;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	@Override
 	public String toString() {
 		return "Customers [id=" + id + ", name=" + name + ", address="
 				+ address + ", officeAddress=" + officeAddress + ", phone="
-				+ phone + ", dateOfBirth=" + dateOfBirth + "]";
+				+ phone + ", dateOfBirth=" + dateOfBirth + ", secretText="
+				+ secretText + ", description=" + description + "]";
 	}
+	
+	
 }
