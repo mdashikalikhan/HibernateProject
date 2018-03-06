@@ -13,7 +13,6 @@ import org.hibernate.cfg.Configuration;
  */
 public class HibernateTestAnother2 {
 	public static void main(String[] args) {
-
 		PersonDetails person = new PersonDetails();
 		person.setName("PERSON NAME");
 

@@ -42,6 +42,8 @@
 		<mapping class="org.ashik.dto.Customers"/>
 		<mapping class="org.ashik.dto.UserMaster"/>
 		<mapping class="org.ashik.dto.PersonDetails"/>        
+		<mapping class="org.ashik.dto.Vehicle"/> 
+		<mapping class="org.ashik.dto.Employees"/> 
         <!-- <mapping resource="org/hibernate/tutorial/hbm/Event.hbm.xml"/> -->
 
     </session-factory>
