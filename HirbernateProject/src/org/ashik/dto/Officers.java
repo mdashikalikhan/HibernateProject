@@ -44,6 +44,11 @@ public class Officers {
 	public void setVehicle(Collection<Vehicle> vehicle) {
 		this.vehicle = vehicle;
 	}
+	@Override
+	public String toString() {
+		return "Officers [id=" + id + ", name=" + name + ", vehicle=" + vehicle
+				+ "]";
+	}
 	
 	
 
