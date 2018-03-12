@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
 @Entity
 public class Vehicle {
 	@Id @GeneratedValue
@@ -14,6 +17,7 @@ public class Vehicle {
 	@Column(name="VEHICLE_NAME")
 	private String vehicleName;
 	@ManyToOne
+	@NotFound(action=NotFoundAction.IGNORE)
 	private Officers officer;
 	
 	public int getVehicleId() {
