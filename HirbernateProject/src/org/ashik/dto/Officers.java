@@ -3,6 +3,7 @@ package org.ashik.dto;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,7 +23,7 @@ public class Officers {
 	private int id;
 	@Column(name = "OFFICER_NAME")
 	private String name;
-	@OneToMany
+	@OneToMany(cascade=CascadeType.ALL)
 	@JoinTable(name = "Offiers_Have_Vehicle", joinColumns = @JoinColumn(name = "OFF_ID"), inverseJoinColumns = @JoinColumn(name = "VEH_ID"))
 	private Collection<Vehicle> vehicle = new ArrayList<Vehicle>();
 

@@ -25,6 +25,13 @@ public class HibernateTestAnother4 {
 
 		Vehicle vehicle3 = new Vehicle();
 		vehicle3.setVehicleName("Special Vehicle");
+		
+		Vehicle vehicle4 = new Vehicle();
+		vehicle4.setVehicleName("New Vehicle");
+		
+		officers.getVehicle().add(vehicle4);
+		
+		vehicle4.setOfficer(officers);
 
 		SessionFactory sessionFactory = new Configuration().configure()
 				.buildSessionFactory();
@@ -32,9 +39,11 @@ public class HibernateTestAnother4 {
 
 		session.beginTransaction();
 
-		session.save(officers);
+		/*session.save(officers);
 		session.save(vehicle1);
-		session.save(vehicle2);
+		session.save(vehicle2);*/
+		
+		session.persist(officers);
 
 		Integer id = (Integer) session.save(vehicle3);
 		System.out.println(id);
