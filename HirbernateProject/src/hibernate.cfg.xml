@@ -49,7 +49,10 @@
 		<mapping class="org.ashik.dto.SubjectDetails"/>
 		<mapping class="org.ashik.dto.BiCycle"/>
 		<mapping class="org.ashik.dto.MountainBike"/>
-		<mapping class="org.ashik.dto.RoadBike"/>   
+		<mapping class="org.ashik.dto.RoadBike"/>
+		<mapping class="org.ashik.dto.Teacher"/>
+		<mapping class="org.ashik.dto.PhysicsTeacher"/>
+		<mapping class="org.ashik.dto.ITTeacher"/>   
         <!-- <mapping resource="org/hibernate/tutorial/hbm/Event.hbm.xml"/> -->
 
     </session-factory>
