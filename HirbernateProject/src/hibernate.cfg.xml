@@ -52,7 +52,10 @@
 		<mapping class="org.ashik.dto.RoadBike"/>
 		<mapping class="org.ashik.dto.Teacher"/>
 		<mapping class="org.ashik.dto.PhysicsTeacher"/>
-		<mapping class="org.ashik.dto.ITTeacher"/>   
+		<mapping class="org.ashik.dto.ITTeacher"/>
+		<mapping class="org.ashik.dto.Food"/>   
+		<mapping class="org.ashik.dto.BanglaFood"/>   
+		<mapping class="org.ashik.dto.ChineseFood"/>      
         <!-- <mapping resource="org/hibernate/tutorial/hbm/Event.hbm.xml"/> -->
 
     </session-factory>
